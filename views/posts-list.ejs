@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head', { title: 'All Posts' }) %>
+    <link rel="stylesheet" href="/styles/posts.css" />
+  </head>
+
+  <body>
+    <%- include('includes/header') %>
+    <main id="all-posts">
+      <h1>All Posts</h1>
+
+      <% if(posts.length > 0) { %>
+      <!-- start for loop -->
+      <% for(post of posts) { %> <%- include('includes/post-item', {post:post})
+      %> <% } %>
+      <!-- end for loop -->
+      <% } else { %>
+      <p>NO POST FOUNd</p>
+      <% } %>
+    </main>
+  </body>
+</html>
